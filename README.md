@@ -8,3 +8,9 @@ BME680
 Backlight TV LED (Which I hope I can hook up)
 
 
+In order to run the project you will need to follow the instructions.
+
+virtualenv -p python3 . 
+. bin/activate
+pip install -r requrements.txt
+
