@@ -3,11 +3,11 @@ from stripcontroller import StripController
 
 s = StripController()
 
-s.R()
-sleep(1)
 s.G()
 sleep(1)
-s.B()
+s.Y()
+sleep(1)
+s.R()
 sleep(1)
 
 print("OK")

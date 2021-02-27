@@ -17,16 +17,19 @@ class StripController():
         self.blue.on()
         
     
-    def G(self):
+    def G(self): # Light green
         self.reset()
         self.green.off()
 
-    def R(self):
+    def R(self): # Light red
         self.reset()
         self.red.off()
 
-    def B(self):
+    def Y(self): # Light Yellow
         self.reset()
-        self.blue.off()
+        self.red.off()
+        self.green.off()
+
+     
 
 
