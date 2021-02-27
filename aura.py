@@ -1,6 +1,8 @@
 import bme680
 import time
+from stripcontroller import StripController
 
+s = StripController()
 
 try:
     sensor = bme680.BME680(bme680.I2C_ADDR_PRIMARY)
@@ -97,8 +99,16 @@ try:
                 sensor.data.humidity,
                 air_quality_score
             )
-            print(output)
+            if air_quality_score >= 80:
+                s.G()
+            if air_quality_score < 80:
+                s.BG()               
+            if air_quality_score < 60:
+                s.Y()
+            if air_quality_score < 50:
+                s.R()
 
+            print(output)
         time.sleep(1)
 
 except KeyboardInterrupt:
