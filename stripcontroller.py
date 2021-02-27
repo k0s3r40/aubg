@@ -25,6 +25,11 @@ class StripController():
         self.reset()
         self.red.off()
 
+    def BG(self): # Light  blue and green
+        self.reset()
+        self.blue.off()
+        self.green.off()
+
     def Y(self): # Light Yellow
         self.reset()
         self.red.off()

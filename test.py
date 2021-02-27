@@ -5,6 +5,8 @@ s = StripController()
 
 s.G()
 sleep(1)
+s.BG()
+sleep(1)
 s.Y()
 sleep(1)
 s.R()
