@@ -16,3 +16,38 @@ pip install -r requrements.txt
 
 
 ![Schema](https://user-images.githubusercontent.com/10780309/109404906-5fc6dc00-7973-11eb-962a-c3f9e964e50f.png)
+
+
+
+
+Regards,
+
+SLAVOV Kostadin
+
+Team name: DayOff
+
+Product: Aura Station
+
+Once sentence desc Future for everybody
+
+Logo  
+
+
+
+
+
+
+
+
+
+Presentation: The video is live presentation :) 
+
+
+
+
+
+https://github.com/k0s3r40/aubg
+
+
+
+
