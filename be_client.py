@@ -42,13 +42,10 @@ class SomethingWayClient:
         }
         response = requests.post(self.HOST + "/customer/603af10ba4d8ecdf1a0438df/devices", json=request_body, headers=self.headers)
 
-    def store_data(self):
+    def store_data(self, sensor_data):
         request_body = {
-            'GR': 100, # Aiq
-            'HUM': 50,
-            'PSI': 102,
-            'TMP': 10,
             'TS': str(datetime.datetime.now().timestamp()).split('.')[0],
+            **sensor_data,
         }
 
         response = requests.post(self.HOST + "/customer/603af10ba4d8ecdf1a0438df/devices/staticaura/store", json=request_body, headers=self.headers)

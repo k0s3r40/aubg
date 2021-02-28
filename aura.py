@@ -1,8 +1,17 @@
 import bme680
 import time
 from stripcontroller import StripController
-
+from be_client import SomethingWayClient
 s = StripController()
+
+
+creds = {"email":"kostadin@slavov.net",
+          "password":"verysecure",
+          }
+
+cli = SomethingWayClient()
+
+cli.login(creds)
 
 try:
     sensor = bme680.BME680(bme680.I2C_ADDR_PRIMARY)
@@ -93,12 +102,15 @@ try:
             air_quality_score = hum_score + gas_score
 
 
-            output = '{0:.2f} C,{1:.2f} hPa,{2:.2f} %RH. {3:.2f}AQ%'.format(
+            output = '{0:.2f}Ohms  {1:.2f} C,{2:.2f} hPa,{3:.2f} %RH. {4:.2f}AQ%'.format(
+                gas, 
                 sensor.data.temperature,
                 sensor.data.pressure,
                 sensor.data.humidity,
                 air_quality_score
             )
+
+
             if air_quality_score >= 80:
                 s.G()
             if air_quality_score < 80:
@@ -107,6 +119,13 @@ try:
                 s.Y()
             if air_quality_score < 50:
                 s.R()
+
+            sensor_data =  {'GR': air_quality_score, # Aiq
+                            'HUM': sensor.data.humidity,
+                            'PSI': sensor.data.pressure,
+                            'TMP': sensor.data.temperature,
+                            }
+            cli.store_data(sensor_data)
 
             print(output)
         time.sleep(1)

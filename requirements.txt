@@ -1,8 +1,11 @@
 backcall==0.2.0
 bme680==1.0.5
+certifi==2020.12.5
+chardet==4.0.0
 colorzero==1.1
 decorator==4.4.2
 gpiozero==1.5.1
+idna==2.10
 ipython==7.21.0
 ipython-genutils==0.2.0
 jedi==0.18.0
@@ -13,6 +16,8 @@ pkg-resources==0.0.0
 prompt-toolkit==3.0.16
 ptyprocess==0.7.0
 Pygments==2.8.0
+requests==2.25.1
 smbus==1.1.post2
 traitlets==5.0.5
+urllib3==1.26.3
 wcwidth==0.2.5
