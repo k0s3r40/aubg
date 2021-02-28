@@ -53,12 +53,12 @@ class SomethingWayClient:
 
     def fetch(self):
         request_body = {
-            "from": str((datetime.datetime.now()-datetime.timedelta(days=1)).timestamp()).split('.')[0],
+            "from": str((datetime.datetime.now()-datetime.timedelta(minutes=1)).timestamp()).split('.')[0],
             "to": str(datetime.datetime.now().timestamp()).split('.')[0]
         }
         response = requests.post(self.HOST + "/customer/603af10ba4d8ecdf1a0438df/devices/staticaura/fetch", json=request_body, headers=self.headers)
-        print(response.status_code)
-        print(len(json.loads(response.content)))
+
+        return json.loads(response.content)
 
 
 if __name__ == '__main__':
